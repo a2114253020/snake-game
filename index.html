@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>贪吃蛇</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app">
+      <section class="game-shell" aria-label="贪吃蛇游戏">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Snake Game</p>
+            <h1>贪吃蛇</h1>
+          </div>
+          <div class="scoreboard" aria-label="计分板">
+            <div>
+              <span>分数</span>
+              <strong id="score">0</strong>
+            </div>
+            <div>
+              <span>最高</span>
+              <strong id="best">0</strong>
+            </div>
+          </div>
+        </header>
+
+        <div class="board-wrap">
+          <canvas id="board" width="560" height="560" aria-label="贪吃蛇棋盘"></canvas>
+          <div class="overlay" id="overlay">
+            <strong id="overlay-title">准备开始</strong>
+            <span id="overlay-text">按空格或点击开始</span>
+          </div>
+        </div>
+
+        <footer class="controls">
+          <div class="buttons">
+            <button id="start" type="button">开始</button>
+            <button id="pause" type="button">暂停</button>
+            <button id="restart" type="button">重开</button>
+          </div>
+
+          <label class="speed-control">
+            <span>速度</span>
+            <select id="speed" aria-label="速度">
+              <option value="150">轻松</option>
+              <option value="110" selected>标准</option>
+              <option value="80">极速</option>
+            </select>
+          </label>
+
+          <div class="touch-pad" aria-label="触屏方向键">
+            <button data-dir="up" aria-label="向上">↑</button>
+            <button data-dir="left" aria-label="向左">←</button>
+            <button data-dir="right" aria-label="向右">→</button>
+            <button data-dir="down" aria-label="向下">↓</button>
+          </div>
+        </footer>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
